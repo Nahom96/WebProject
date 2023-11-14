@@ -1,0 +1,47 @@
+<!-- index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Web App</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="/images/ak.png" alt="Logo" class="logo"> <!-- Add your logo path -->
+        <h1>Welcome</h1>
+        <form action="/create" method="POST">
+            <input type="text" name="name" placeholder="Enter object name" required>
+            <button type="submit">Create Object</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% objects.forEach(function(obj) { %>
+                    <tr>
+                        <td><%= obj.id %></td>
+                        <td><%= obj.name %></td>
+                        <td>
+                            <form action="/update/<%= obj.id %>" method="POST" style="display: inline;">
+                                <input type="text" name="name" placeholder="New name">
+                                <button type="submit">Update</button>
+                            </form>
+                            <form action="/delete/<%= obj.id %>" method="POST" style="display: inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

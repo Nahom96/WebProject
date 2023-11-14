@@ -1,0 +1,112 @@
+/* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('/public/images/ak.png') no-repeat center center fixed; 
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* semi-transparent white */
+  backdrop-filter: blur(10px); /* frosted glass effect */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 20px auto; /* centers the logo */
+  max-width: 100px; /* adjust to the size of your logo */
+  height: auto; /* keeps the aspect ratio of the logo */
+}
+
+h1 {
+  text-align: center;
+  color: #0a0a0a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+  transition: background-color 0.3s ease;
+}
+
+form {
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus {
+  border-color: #4CAF50;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #5cb85c;
+  color: rgb(221, 50, 50);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #449d44;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  input[type="text"], button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
